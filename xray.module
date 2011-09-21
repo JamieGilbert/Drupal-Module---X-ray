@@ -1,0 +1,17 @@
+<?php
+/**
+ * @file
+ * Helps site builders and module developers investigate a site
+ */
+
+/**
+ * Implements a hook_form_alter() to show each form's identifier.
+ */
+function xray_form_alter(&$form, &$form_state, $form_id) {
+ $form['xray_display_form_id'] = array(
+  '#type' => 'item',
+  '#title' => t('Form_ID'),
+  '#markup' => $form_id,
+  '#weight' => -100,
+ );
+}
